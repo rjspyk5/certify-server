@@ -21,6 +21,7 @@ connectDb();
 
 // user Routes
 app.post("/register", UserControllar.register);
+app.get("/user/:email", UserControllar.getUser);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

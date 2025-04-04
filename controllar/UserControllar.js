@@ -9,7 +9,15 @@ module.exports = {
       return;
     } else {
       const result = await createUser(name, email);
-      console.log(result);
+      return res.send(result);
     }
+  },
+
+  getUser: async (req, res) => {
+    const email = req.params?.email;
+    console.log(email);
+    const result = await findUser(email);
+
+    return res.send(result);
   },
 };
